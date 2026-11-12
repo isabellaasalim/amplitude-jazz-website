@@ -51,6 +51,13 @@ nav a::after { content: ''; position: absolute; left: -4px; right: -4px; bottom:
 nav a[aria-current]::after, nav a:hover::after, nav a:focus-visible::after { opacity: 1; }
 nav a:last-child { display: flex; gap: 24px; border: 1px solid var(--ink); border-radius: 47% 53% 49% 51% / 12% 16% 14% 16%; padding: 12px 20px; background: var(--soft); }
 nav a:hover { color: #91416C; }
+nav a[href="#contact"]::after { content: none; }
+@media (prefers-reduced-motion: no-preference) {
+  nav a[href="#contact"] { transition: transform .18s ease; }
+  nav a[href="#contact"]:hover,
+  nav a[href="#contact"]:active,
+  nav a[href="#contact"][aria-current] { transform: translateY(-3px); }
+}
 .menu-button { display: none; }
 .hero { display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; column-gap: 10px; padding-top: 42px; }
 .hero-copy { position: relative; z-index: 1; }
@@ -125,7 +132,8 @@ figcaption { display: flex; justify-content: space-between; gap: 15px; font: 10p
 .editorial-row:nth-child(even) h2 { transform: rotate(-2deg); }
 .editorial-row .placeholder { margin: 0; padding: 14px 18px; border-left: 3px solid var(--sage); background: #B9D9C312; }
 .page-about .editorial-row .placeholder,
-.page-initiatives .editorial-row .placeholder { font-size: 18px; line-height: 1.6; }
+.page-initiatives .editorial-row .placeholder,
+.page-support .editorial-row .placeholder { font-size: 18px; line-height: 1.6; }
 .editorial-row .placeholder > p { line-height: inherit; }
 .editorial-row .placeholder > p + p { margin-top: 18px; }
 .member-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 25px; margin: 42px 0 65px; }
@@ -242,7 +250,8 @@ input, textarea, [contenteditable]:not([contenteditable="false"]) { cursor: text
   .editorial-row h2 { font-size: 28px; }
   .editorial-row .placeholder { grid-column: 2; padding: 12px; margin-top: 7px; }
   .page-about .editorial-row .placeholder,
-  .page-initiatives .editorial-row .placeholder { font-size: 16px; }
+  .page-initiatives .editorial-row .placeholder,
+  .page-support .editorial-row .placeholder { font-size: 16px; }
   .instrument { font-size: 16px; }
   .member-grid { gap: 27px 18px; }
   .portrait .photo-empty { min-height: 175px; }
