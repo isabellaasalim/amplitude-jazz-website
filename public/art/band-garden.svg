@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 560" fill="none">
+<!-- Original Amplitude illustration. Replace this file with your own SVG artwork. -->
+<g stroke="#29232A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M69 420C10 312 81 129 231 97c144-31 283 34 337 160 49 113-36 224-187 240-142 15-263-12-312-77Z" fill="#FF9FC8" stroke="none"/>
+<path d="M63 446c129-24 340-15 520 9M85 460l-12 8m476 1 13 7"/>
+<!-- A crooked little upright bass -->
+<g transform="rotate(12 443 270)"><path d="m438 75-4 92c-27-5-53 21-40 45 15 29-35 36-34 85 2 50 39 77 83 67 41-10 53-58 26-90-28-33-2-38-7-67-4-23-16-28-21-30l12-101Z" fill="#B9D9C3"/>
+<path d="m445 77-8 265m-6-176-7 175m-8-73c-21-18-8-29 0-18m33 37c15 13 17 29 3 29M414 348l3 90m-17-355 55-7m-24-19 20-2"/>
+<path d="m442 70 2-27 19-2 2 27Z" fill="#F45B9A"/><path d="m432 49-7 1m42-3 9-1m-44 16-9 1m46-4 9-1"/>
+<path d="M482 214c32-11 40-29 36-53m-2-7 2 7 8-2"/>
+</g>
+<!-- Saxophone, with its own winding melody -->
+<g transform="rotate(-14 213 282)"><path d="M181 150h30l6 177c2 22 40 19 43-5l1-40-23-47 82-11-31 60-2 51c-6 61-94 67-107 4Z" fill="#F45B9A"/>
+<path d="m180 150-1-23c-2-25 34-43 54-20l12 13m-46 34 9 174c3 43 63 39 66-5v-43m-35-46c23 9 54 4 80-10"/>
+<path d="m181 180 33-2m-32 26 34-2m-32 26 33-2m-31 26 33-2m-31 26 32-1"/>
+<g fill="#FFFDFE"><circle cx="201" cy="190" r="6"/><circle cx="203" cy="218" r="6"/><circle cx="204" cy="246" r="6"/><circle cx="206" cy="274" r="6"/></g>
+<path d="m201 389-13 37-25 3m77-44 9 37 22 3"/>
+</g>
+<!-- A tiny wandering star, not a band member -->
+<path d="m329 355 11 24 27-3-17 22 12 25-28-8-19 21 1-29-26-13 28-8Z" fill="#FFFDFE"/>
+<path d="m322 433-7 23-15 3m43-33 9 22 16-1"/>
+<path d="m328 395 1 3m14-4 1 3m-13 9c4 4 8 3 10 0"/>
+<!-- Keys spilling off the page -->
+<g transform="rotate(-10 120 403)"><path d="M54 371h125v63H54Z" fill="#FFFDFE"/><path d="M76 373v59m21-59v59m20-59v59m21-59v59m20-59v59"/><path d="M70 372h12v33H70Zm41 0h12v33h-12Zm20 0h12v33h-12Zm21 0h12v33h-12Z" fill="#29232A"/></g>
+<!-- Scattered, intentionally sparse marginalia -->
+<path d="m75 149 10-20 8 20 23 4-21 11-3 24-13-20-22-4ZM528 89l5-20 8 17 20 2-15 12 3 20-15-12-18 7 8-18Z" fill="#B9D9C3"/>
+<path d="m332 85 4-21m-15 11 25-2m211 270 6-17m-16 8 25 3m-457-68-10-12m-4 21-14-1M338 159c9-14 23-13 29 0"/>
+<path d="m270 61 4-23 21 3-3 23m-18-22 20 3"/><ellipse cx="267" cy="65" rx="8" ry="5" fill="#29232A"/><ellipse cx="286" cy="67" rx="8" ry="5" fill="#29232A"/>
+<path d="M548 394c33-19 39-44 31-67m-5 9 5-9 10 6M109 91c28-36 73-45 111-32m-12-8 12 8-10 9" stroke-dasharray="5 8"/>
+</g></svg>

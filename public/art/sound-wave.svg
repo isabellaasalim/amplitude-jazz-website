@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 72" fill="none">
+<!-- Original waveform backdrop; editable independently of the instrument art. -->
+<g stroke-linecap="round" stroke-linejoin="round">
+<path d="M5 37c8 0 8-8 16-8s8 16 16 16 9-30 17-30 9 47 18 47 8-54 17-54 9 49 18 49 9-40 18-40 8 29 17 29 8-18 17-18 9 10 26 9" stroke="#BB718F" stroke-width="4.5"/>
+<path d="M6 44c18 1 22-9 35-8s18 10 27 7m53 16c21 4 36-4 62-10" stroke="#B9D9C3" stroke-width="2.8"/>
+<path d="M8 26c12-1 14-7 22-7m119-1c12-2 24 1 34 5" stroke="#FF9FC8" stroke-width="2"/>
+</g></svg>
