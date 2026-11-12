@@ -13,7 +13,7 @@ export const content = {
   },
   site: {
     name: 'Amplitude Jazz', tagline: 'a little jazz goes a long way.',
-    location: 'Sunnyvale, California', school: 'Wilcox High School',
+    location: 'Sunnyvale, California',
     descriptor: 'just a bunch of girls playing jazz.',
     footer: 'made with love & a little improv.',
     copyright: 'Amplitude Jazz', menuOpen: 'Open menu', menuClose: 'Close menu',
@@ -28,7 +28,7 @@ export const content = {
   ],
   home: {
     eyebrow: 'An all-girls jazz ensemble', titleTop: 'AMPLITUDE', titleBottom: 'JAZZ',
-    intro: 'We’re Amplitude Jazz, a student-founded, all-girls jazz ensemble at Wilcox High School. Music brings us together. Making more room for girls in jazz keeps us curious.',
+    intro: 'We’re Amplitude Jazz, a student-founded, all-girls jazz ensemble based in Sunnyvale, California. Music brings us together. Making more room for girls in jazz keeps us curious.',
     introPlaceholder: '[PASTE YOUR SHORT INTRODUCTION HERE]',
     aboutButton: 'A little about us', ensembleButton: 'Meet the ensemble', contactButton: 'Get in touch',
     photo: { src: '', alt: '', label: 'the whole gang!', caption: '01 / The band, together', note: '[ADD YOUR ENSEMBLE PHOTO HERE]' },

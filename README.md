@@ -1,6 +1,6 @@
 # Amplitude Jazz
 
-A first functional website for the student-founded, all-girls jazz ensemble at Wilcox High School. Built with React, Vite, and plain CSS. All seven pages work without a backend, accounts, or payments.
+A first functional website for the student-founded, all-girls jazz ensemble based in Sunnyvale, California. Built with React, Vite, and plain CSS. All seven pages work without a backend, accounts, or payments.
 
 ## Preview on your computer
 
@@ -66,8 +66,8 @@ The original decorative illustrations are separate, editable SVG files in `publi
 - `band-garden.svg` — homepage instrument scene
 - `little-melody.svg` — secondary community illustration
 - `star-cursor.svg` — original small pink star cursor
-- `sound-wave.svg` — two reusable, thin waveform doodles
-- `home-mark.svg` — navigation star and wave mark
+- `sound-wave.svg` — layered hand-drawn waveform artwork behind the instrument compositions
+- `home-mark.svg` — wave-led navigation mark with a small pink star
 
 Replace either illustration file with your own artwork, or change its path in `content.artwork` in `src/content.js`. SVG, PNG, and WebP work; keep a similar aspect ratio (650×560 for the hero and 420×300 for the secondary illustration). These images are decorative and hidden from screen readers; real ensemble photos keep their editable alt text.
 

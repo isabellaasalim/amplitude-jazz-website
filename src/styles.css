@@ -62,8 +62,12 @@ nav a:hover { color: #91416C; }
 .hero .button { margin-top: 30px; }
 .hero-world { position: relative; min-width: 0; }
 .hero-world > .artwork { width: 113%; max-width: none; margin-left: -6%; }
-.title-wave { width: 125px; margin: -4px 0 7px 2px; }
-.outreach-wave { width: 135px; margin: -12px 0 0 auto; }
+/* Waveforms share the instrument compositions instead of floating beside text. */
+.hero-world > .hero-wave { position: absolute; width: 49%; right: 1%; bottom: 9%; margin: 0; opacity: .3; pointer-events: none; }
+.hero-world > .artwork:not(.hero-wave) { position: relative; }
+.outreach-art { position: relative; }
+.outreach-art > .artwork:not(.outreach-wave) { position: relative; z-index: 1; }
+.outreach-wave { position: absolute; width: 64%; right: 1%; bottom: 19%; opacity: .3; pointer-events: none; }
 .hero-bottom { grid-column: 1 / -1; margin-top: 28px; padding: 20px 0; display: flex; justify-content: space-between; border-bottom: 1px dashed #AF9BA7; font: 10px 'Courier New', monospace; letter-spacing: .08em; text-transform: uppercase; gap: 20px; }
 .button { display: inline-flex; align-items: center; justify-content: space-between; gap: 35px; background: var(--pink); color: var(--ink); border: 1.4px solid var(--ink); border-radius: 5px 10px 7px 12px; padding: 15px 21px; font-size: 12px; box-shadow: 3px 4px 0 var(--ink); transition: transform .18s, box-shadow .18s, background .18s; }
 .button > span { font-size: 22px; }
@@ -88,7 +92,6 @@ nav a:hover { color: #91416C; }
 .photo img { display: block; width: 100%; max-height: 520px; object-fit: cover; }
 figcaption { display: flex; justify-content: space-between; gap: 15px; font: 10px 'Courier New', monospace; text-transform: uppercase; letter-spacing: .06em; padding: 16px 5px 5px; }
 .tape { position: absolute; z-index: 2; top: -12px; left: 35%; width: 105px; height: 30px; background: #B9D9C3D9; transform: rotate(-9deg); clip-path: polygon(2% 0,100% 6%,96% 100%,0 92%,4% 70%,0 50%,4% 30%); }
-.photo-sticker { position: absolute; bottom: 20px; right: -22px; border: 1px solid var(--ink); background: var(--soft); border-radius: 50%; padding: 23px 15px; max-width: 138px; text-align: center; font: 15px/1.5 var(--hand); transform: rotate(-13deg); }
 .ticker { display: flex; justify-content: center; gap: 55px; padding: 21px 30px; background: var(--sage); border-block: 1px solid var(--ink); transform: rotate(-1deg); }
 .ticker > span { display: flex; align-items: center; gap: 55px; font: 500 24px/1.25 'Amplitude Caveat', var(--hand); letter-spacing: .015em; white-space: nowrap; }
 .ticker .star { width: 25px; color: var(--paper); }
@@ -204,6 +207,7 @@ input, textarea, [contenteditable]:not([contenteditable="false"]) { cursor: text
   .hero .button { margin-top: 24px; }
   .hero-world { width: min(100%, 470px); margin: 15px auto 12px; }
   .hero-world > .artwork { width: 100%; margin: 0; }
+  .hero-world > .hero-wave { width: 49%; }
   .hero-bottom { margin-top: 18px; font-size: 9px; line-height: 1.6; }
   .hero-bottom > span:last-child { text-align: right; }
   .intro-grid { grid-template-columns: 1fr; gap: 50px; padding-block: 40px 65px; }
@@ -211,7 +215,6 @@ input, textarea, [contenteditable]:not([contenteditable="false"]) { cursor: text
   .intro-copy { max-width: none; }
   .photo-collage { margin-inline: 5px 12px; }
   .photo-empty { min-height: 250px; }
-  .photo-sticker { right: -16px; }
   .ticker { flex-wrap: wrap; justify-content: center; gap: 14px 25px; padding: 18px 20px; }
   .ticker > span { font-size: 21px; gap: 20px; }
   .ticker .star { width: 18px; }

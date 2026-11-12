@@ -29,13 +29,13 @@ function Home() { const h = c.home; return <>
   <section className="hero wrap">
     <div className="hero-copy"><p className="eyebrow">{h.eyebrow}<br/>{c.site.location}</p>
       <h1 className="hero-title"><span>{h.titleTop}</span><span className="jazz">{h.titleBottom}<Star /></span></h1>
-      <Artwork name="waveform" className="title-wave"/><p className="tagline">{c.site.tagline}</p>
+      <p className="tagline">{c.site.tagline}</p>
       <Link to="ensemble" className="button">{h.ensembleButton}</Link>
     </div>
-    <div className="hero-world"><Artwork name="hero"/></div>
-    <div className="hero-bottom"><span className="descriptor">{c.site.descriptor}</span><span>{c.site.school}</span></div>
+    <div className="hero-world"><Artwork name="waveform" className="hero-wave"/><Artwork name="hero"/></div>
+    <div className="hero-bottom"><span className="descriptor">{c.site.descriptor}</span></div>
   </section>
-  <section className="intro-grid wrap"><div className="intro-copy"><span className="eyebrow descriptor">{c.site.descriptor}</span><p className="intro-text">{h.intro}</p><Placeholder>{h.introPlaceholder}</Placeholder><div className="button-row"><Link to="about" className="button">{h.aboutButton}</Link><Link to="ensemble" className="text-link">{h.ensembleButton}</Link></div></div><div className="photo-collage"><span className="tape" aria-hidden="true"/><Photo photo={h.photo}/><span className="photo-sticker">{c.site.tagline}</span></div></section>
+  <section className="intro-grid wrap"><div className="intro-copy"><p className="intro-text">{h.intro}</p><Placeholder>{h.introPlaceholder}</Placeholder><div className="button-row"><Link to="about" className="button">{h.aboutButton}</Link><Link to="ensemble" className="text-link">{h.ensembleButton}</Link></div></div><div className="photo-collage"><span className="tape" aria-hidden="true"/><Photo photo={h.photo}/></div></section>
   <div className="ticker">{h.ticker.map(t => <span key={t}>{t}<Star /></span>)}</div>
   <section className="performance-preview wrap"><div className="section-top"><div><p className="eyebrow">{h.performanceLabel}</p><h2>{h.performanceTitle}</h2></div><Link to="performances" className="text-link">{h.performanceButton}</Link></div><Events events={c.performances.upcomingEvents.slice(0, 2)} empty={c.performances.emptyUpcoming}/></section>
   <section className="outreach"><div className="wrap outreach-grid"><div className="outreach-art"><Artwork name="outreach"/><Artwork name="waveform" className="outreach-wave"/></div><div><p className="eyebrow">{h.initiativeLabel}</p><h2>{h.initiativeTitle}</h2><p>{h.initiativeText}</p><Link to="initiatives" className="button light">{h.initiativeButton}</Link></div></div></section>
