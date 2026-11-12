@@ -124,6 +124,8 @@ figcaption { display: flex; justify-content: space-between; gap: 15px; font: 10p
 .editorial-row h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); max-width: 440px; }
 .editorial-row:nth-child(even) h2 { transform: rotate(-2deg); }
 .editorial-row .placeholder { margin: 0; padding: 14px 18px; border-left: 3px solid var(--sage); background: #B9D9C312; }
+.page-about .editorial-row .placeholder,
+.page-initiatives .editorial-row .placeholder { font-size: 18px; line-height: 1.6; }
 .editorial-row .placeholder > p { line-height: inherit; }
 .editorial-row .placeholder > p + p { margin-top: 18px; }
 .member-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 25px; margin: 42px 0 65px; }
@@ -135,8 +137,8 @@ figcaption { display: flex; justify-content: space-between; gap: 15px; font: 10p
 .portrait .photo-empty > span { font: 10px 'Courier New', monospace; }
 .portrait img { aspect-ratio: 4/5; object-fit: cover; }
 .member h2 { min-height: 2.16em; font-size: 20px; letter-spacing: -.03em; margin-top: 23px; }
-.instrument { font: 12px var(--hand); margin-top: 11px; color: #91416C; }
-.member-role { font: 10px/1.4 'Courier New', monospace; color: #91416C; margin-top: 8px; }
+.instrument { font: 17px/1.5 var(--hand); min-height: 3em; margin-top: 11px; color: #91416C; }
+.member-role { font: 14px/1.5 'Courier New', monospace; color: #91416C; margin-top: 8px; }
 .member .placeholder { font-size: 10px; }
 .event-section { margin-block: 45px 60px; }
 .event-section h2 { font-size: 32px; }
@@ -239,6 +241,9 @@ input, textarea, [contenteditable]:not([contenteditable="false"]) { cursor: text
   .editorial-row { grid-template-columns: 25px 1fr; gap: 13px; padding-block: 30px; }
   .editorial-row h2 { font-size: 28px; }
   .editorial-row .placeholder { grid-column: 2; padding: 12px; margin-top: 7px; }
+  .page-about .editorial-row .placeholder,
+  .page-initiatives .editorial-row .placeholder { font-size: 16px; }
+  .instrument { font-size: 16px; }
   .member-grid { gap: 27px 18px; }
   .portrait .photo-empty { min-height: 175px; }
   .portrait .photo-empty > span { font-size: 9px; padding-inline: 8px; }
