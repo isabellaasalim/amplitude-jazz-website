@@ -58,3 +58,15 @@ For GitHub Pages, enable Pages with **GitHub Actions** in repository Settings, t
 ## Before sharing publicly
 
 Replace the clearly marked writing/photo/contact placeholders and check the website on a phone. No real member names, performance dates, venues, contact addresses, nonprofit claims, or tax claims have been invented.
+
+## Replace the illustrated artwork
+
+The original decorative illustrations are separate, editable SVG files in `public/art/`. They are graphic artwork, not representations of actual ensemble members or instrumentation.
+
+- `band-garden.svg` — homepage instrument scene
+- `little-melody.svg` — secondary community illustration
+- `star-cursor.svg` — small desktop cursor
+
+Replace either illustration file with your own artwork, or change its path in `content.artwork` in `src/content.js`. SVG, PNG, and WebP work; keep a similar aspect ratio (650×560 for the hero and 420×300 for the secondary illustration). These images are decorative and hidden from screen readers; real ensemble photos keep their editable alt text.
+
+The palette and handwriting font stack are defined at the top of `src/styles.css`. The custom cursor applies only to a mouse or other fine pointer; links keep the familiar pointer cursor. To replace it, use a small SVG (28×28) at the same path, or update the cursor declaration in the CSS. Hover motion is disabled when visitors prefer reduced motion. No new dependencies are needed for the artwork or interactions.

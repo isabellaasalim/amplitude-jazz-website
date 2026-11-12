@@ -7,7 +7,8 @@ const ids = c.navigation.map(item => item.id);
 const currentPage = () => ids.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'home';
 const Arrow = () => <span aria-hidden="true">↗</span>;
 function Link({ to, children, className = '' }) { return <a className={className} href={`#${to}`}>{children}<Arrow /></a>; }
-function Star({ className = '' }) { return <svg className={`star ${className}`} viewBox="0 0 100 100" aria-hidden="true"><path d="M48 3 57 35 82 13 67 43 98 48 67 57 85 83 57 67 50 98 41 68 13 85 33 58 3 50 35 41 16 15 43 34Z" fill="currentColor" /></svg>; }
+function Star({ className = '' }) { return <svg className={`star ${className}`} viewBox="0 0 100 100" aria-hidden="true"><path d="m48 7 13 29 31 1-24 23 8 32-29-16-29 15 7-32L5 36l32-1Z" fill="currentColor" stroke="var(--ink)" strokeWidth="3" strokeLinejoin="round" /></svg>; }
+function Artwork({ name, className = '' }) { return <img className={`artwork ${className}`} src={c.artwork[name]} alt="" aria-hidden="true" />; }
 function Placeholder({ children }) { return <p className="placeholder">{children}</p>; }
 function Photo({ photo, portrait = false }) {
   return <figure className={`photo ${portrait ? 'portrait' : ''}`}>
@@ -20,14 +21,18 @@ function Sections({ sections }) { return <div className="editorial-sections">{se
 function Events({ events, empty }) { return events.length ? <div className="events">{events.map(event => <article className="event" key={event.id}><p className="eyebrow">{event.date}</p><h3>{event.title}</h3><p>{event.venue} · {event.location}</p><p>{event.description}</p></article>)}</div> : <div className="empty-event"><span className="empty-mark" aria-hidden="true">↳</span><p>{empty}</p></div>; }
 function Home() { const h = c.home; return <>
   <section className="hero wrap">
-    <div className="hero-top"><p className="eyebrow">{h.eyebrow}<br/>{c.site.location}</p><p className="handwritten">{h.note}<span aria-hidden="true"> ⤵</span></p></div>
-    <h1 className="hero-title"><span>{h.titleTop}</span><span className="jazz">{h.titleBottom}<Star /></span></h1>
-    <div className="hero-bottom"><p className="tagline">{c.site.tagline}</p><span className="edition">{c.site.school} <span aria-hidden="true">/</span> CA</span></div>
+    <div className="hero-copy"><p className="eyebrow">{h.eyebrow}<br/>{c.site.location}</p>
+      <h1 className="hero-title"><span>{h.titleTop}</span><span className="jazz">{h.titleBottom}<Star /></span></h1>
+      <p className="tagline">{c.site.tagline}</p>
+      <Link to="ensemble" className="button">{h.ensembleButton}</Link>
+    </div>
+    <div className="hero-world"><Artwork name="hero"/><p className="handwritten">{h.note}<span aria-hidden="true"> ⤴</span></p></div>
+    <div className="hero-bottom"><span>{c.site.descriptor}</span><span>{c.site.school}</span></div>
   </section>
   <section className="intro-grid wrap"><div className="intro-copy"><span className="eyebrow">{c.site.descriptor}</span><p className="intro-text">{h.intro}</p><Placeholder>{h.introPlaceholder}</Placeholder><div className="button-row"><Link to="about" className="button">{h.aboutButton}</Link><Link to="ensemble" className="text-link">{h.ensembleButton}</Link></div></div><div className="photo-collage"><span className="tape" aria-hidden="true"/><Photo photo={h.photo}/><span className="photo-sticker">{c.site.tagline}</span></div></section>
   <div className="ticker">{h.ticker.map(t => <span key={t}>{t}<Star /></span>)}</div>
   <section className="performance-preview wrap"><div className="section-top"><div><p className="eyebrow">{h.performanceLabel}</p><h2>{h.performanceTitle}</h2></div><Link to="performances" className="text-link">{h.performanceButton}</Link></div><Events events={c.performances.upcomingEvents.slice(0, 2)} empty={c.performances.emptyUpcoming}/></section>
-  <section className="outreach"><div className="wrap outreach-grid"><div className="outreach-art" aria-hidden="true"><Star /><span>↗</span></div><div><p className="eyebrow">{h.initiativeLabel}</p><h2>{h.initiativeTitle}</h2><p>{h.initiativeText}</p><Link to="initiatives" className="button light">{h.initiativeButton}</Link></div></div></section>
+  <section className="outreach"><div className="wrap outreach-grid"><div className="outreach-art"><Artwork name="outreach"/></div><div><p className="eyebrow">{h.initiativeLabel}</p><h2>{h.initiativeTitle}</h2><p>{h.initiativeText}</p><Link to="initiatives" className="button light">{h.initiativeButton}</Link></div></div></section>
   <div className="home-contact wrap"><h2>{c.contact.title}<span className="pink">.</span></h2><Link to="contact" className="button">{h.contactButton}</Link></div>
 </>; }
 function InnerPage({ page }) {

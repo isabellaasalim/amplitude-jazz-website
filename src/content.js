@@ -3,6 +3,12 @@
 // Paths are relative (no leading slash) so photos also work on GitHub Pages.
 // Always write descriptive alt text when adding a real photograph.
 export const content = {
+  // ORIGINAL ARTWORK: replace these files or point src to your own SVG/PNG/WebP.
+  // Artwork is decorative; ensemble photographs still belong in the photo fields.
+  artwork: {
+    hero: 'art/band-garden.svg',
+    outreach: 'art/little-melody.svg',
+  },
   site: {
     name: 'Amplitude Jazz', tagline: 'Amplifying Girls in Jazz',
     location: 'Santa Clara, California', school: 'Wilcox High School',
