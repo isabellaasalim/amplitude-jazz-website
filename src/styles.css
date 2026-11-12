@@ -47,7 +47,8 @@ main:focus { outline: none; }
 .wordmark .artwork { width: 86px; height: 48px; }
 nav { display: flex; align-items: center; gap: 28px; }
 nav a { font-size: 12px; padding: 12px 0; position: relative; }
-nav a[aria-current]::after { content: ''; position: absolute; left: -4px; right: -4px; bottom: 3px; height: 7px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 7' preserveAspectRatio='none'%3E%3Cpath d='M1 4 Q7 0 13 4 T25 4 T37 4 T49 4 T61 4 T73 4 T85 4 T99 3' fill='none' stroke='%23F45B9A' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E") center / 100% 100% no-repeat; pointer-events: none; transform: rotate(-4deg); }
+nav a::after { content: ''; position: absolute; left: -4px; right: -4px; bottom: 3px; height: 7px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 7' preserveAspectRatio='none'%3E%3Cpath d='M1 4 Q7 0 13 4 T25 4 T37 4 T49 4 T61 4 T73 4 T85 4 T99 3' fill='none' stroke='%23F45B9A' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") center / 100% 100% no-repeat; pointer-events: none; transform: rotate(-4deg); opacity: 0; transition: opacity .18s ease; }
+nav a[aria-current]::after, nav a:hover::after, nav a:focus-visible::after { opacity: 1; }
 nav a:last-child { display: flex; gap: 24px; border: 1px solid var(--ink); border-radius: 47% 53% 49% 51% / 12% 16% 14% 16%; padding: 12px 20px; background: var(--soft); }
 nav a:hover { color: #91416C; }
 .menu-button { display: none; }
@@ -133,8 +134,9 @@ figcaption { display: flex; justify-content: space-between; gap: 15px; font: 10p
 .portrait .photo-empty { min-height: 230px; }
 .portrait .photo-empty > span { font: 10px 'Courier New', monospace; }
 .portrait img { aspect-ratio: 4/5; object-fit: cover; }
-.member h2 { font-size: 20px; letter-spacing: -.03em; margin-top: 23px; }
+.member h2 { min-height: 2.16em; font-size: 20px; letter-spacing: -.03em; margin-top: 23px; }
 .instrument { font: 12px var(--hand); margin-top: 11px; color: #91416C; }
+.member-role { font: 10px/1.4 'Courier New', monospace; color: #91416C; margin-top: 8px; }
 .member .placeholder { font-size: 10px; }
 .event-section { margin-block: 45px 60px; }
 .event-section h2 { font-size: 32px; }
@@ -199,7 +201,7 @@ input, textarea, [contenteditable]:not([contenteditable="false"]) { cursor: text
   nav { display: none; width: 100%; padding: 18px 0 25px; flex-direction: column; align-items: stretch; gap: 4px; }
   nav.open { display: flex; }
   nav a { font-size: 15px; padding: 12px; }
-  nav a[aria-current]::after { width: 30px; left: 12px; bottom: 4px; }
+  nav a::after { width: 30px; left: 12px; bottom: 4px; }
   nav a:last-child { justify-content: space-between; border-radius: 5px 8px; }
   .hero { grid-template-columns: 1fr; padding-top: 35px; }
   .hero-title { font-size: clamp(40px, 11vw, 80px); margin-top: 28px; }

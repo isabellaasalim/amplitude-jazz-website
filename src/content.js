@@ -30,7 +30,7 @@ export const content = {
     eyebrow: 'An all-girls jazz ensemble', titleTop: 'AMPLITUDE', titleBottom: 'JAZZ',
     intro: 'We’re Amplitude Jazz, a student-founded, all-girls jazz ensemble based in Sunnyvale, California. Music brings us together. Making more room for girls in jazz keeps us curious.',
     aboutButton: 'A little about us', ensembleButton: 'Meet the ensemble', contactButton: 'Get in touch',
-    photo: { src: '', alt: '', label: 'the whole gang!', caption: '01 / The band, together', note: '[ADD YOUR ENSEMBLE PHOTO HERE]' },
+    photo: { src: '', alt: '', label: 'photos coming soon!', caption: '01 / The band, together' },
     ticker: ['music first', 'room for every voice', 'a little improv'],
     performanceTitle: 'catch us somewhere.', performanceLabel: 'On the calendar',
     performanceButton: 'All performances',
@@ -41,48 +41,36 @@ export const content = {
   about: {
     eyebrow: 'The story so far', title: 'how it all started.',
     sections: [
-      { title: 'Our story', text: "Amplitude began with a simple observation: there weren't very many girls in the room.\n\nAfter years of playing in jazz ensembles and often finding herself one of the only girls onstage, our founder wanted to create something different. Not just another band, but a space where young women could play, improvise, learn from one another, and feel like they belonged.\n\nWhat started as an idea became a group of musicians brought together by a shared love of jazz. We're still growing, still learning, and still figuring things out along the way, but that's part of what makes it exciting. At the heart of it all, we're just a bunch of girls who really love making music together." },
-      { title: 'Our mission', text: "Our mission is to amplify the voices and talents of young women in jazz through performance, education, and community. We strive to create a welcoming space where girls can develop as musicians, express themselves creatively, and build the confidence to take up space in a genre where women have historically been underrepresented.\n\nAbove all, we believe that great music comes from listening to one another, supporting each other, and giving every voice a chance to be heard." },
-      { title: 'Our vision', text: "We envision a jazz community where girls don't have to wonder whether they belong, because their presence is simply part of the music.\n\nAs Amplitude grows, we hope to expand beyond our ensemble through workshops, mentorship, community performances, and educational initiatives that introduce more young musicians to jazz. Our goal is to help create a future where more girls feel encouraged to pick up an instrument, take a solo, and make their voices heard." },
-      { title: 'Why girls in jazz?', text: "Jazz has always been a music of creativity, collaboration, and individuality. Yet throughout its history, women instrumentalists have often received less recognition and fewer opportunities than their male counterparts.\n\nFor many young girls, being one of the only female musicians in an ensemble can feel intimidating, especially when it comes to improvising, taking solos, or stepping into leadership roles.\n\nWe believe representation matters – seeing other girls perform, improvise, and lead can make a difference in how young musicians see themselves and what they believe is possible. Amplitude exists to help make those experiences a little less rare." },
+      { title: 'Our story', text: "Amplitude began with a simple observation: there weren't very many girls in the room.\n\nAfter years of often being one of the only girls in jazz programs, our founder wanted to create a space where young women could play, improvise, and grow together.\n\nWhat started as an idea became a group of musicians united by their love of jazz. We're still growing, but at heart, we're just a bunch of girls who love making music together." },
+      { title: 'Our mission', text: "Our mission is to amplify the voices and talents of young women in jazz through performance, education, and community. We strive to create a welcoming space where girls can grow as musicians, express themselves, and feel confident taking up space in jazz.\n\nWe believe great music comes from listening, supporting one another, and giving every voice a chance to be heard." },
+      { title: 'Our vision', text: "We envision a jazz community where girls never have to question whether they belong.\n\nAs Amplitude grows, we hope to create more opportunities through workshops, mentorship, and community performances, inspiring the next generation of girls to pick up an instrument, take a solo, and make their voices heard." },
+      { title: 'Why girls in jazz?', text: "Jazz celebrates creativity and individuality, yet women instrumentalists have historically faced underrepresentation and fewer opportunities.\n\nBeing one of the only girls in an ensemble can feel intimidating, especially when improvising or stepping into leadership roles. We believe representation matters, and Amplitude hopes to make seeing girls perform, improvise, and lead a little less rare." },
       { title: 'Our values', values: [
-        {
-                "label": "Music comes first.",
-                "text": "We're musicians before anything else. We care about growing as performers, challenging ourselves, and making music we're proud to share."
-        },
-        {
-                "label": "Room for every voice.",
-                "text": "Every musician brings something different to the ensemble. We value collaboration, individuality, and making space for everyone to contribute."
-        },
-        {
-                "label": "Learning together.",
-                "text": "Jazz is a lifelong conversation. We believe in asking questions, trying new things, listening closely, and helping each other grow."
-        },
-        {
-                "label": "Making a difference.",
-                "text": "We hope that what we do extends beyond the stage, encouraging more girls to explore jazz and helping create opportunities for those who come after us."
-        }
-] },
+        {"label": "Music comes first.", "text": "We're dedicated to growing as musicians and making music we're proud to share."},
+        {"label": "Room for every voice.", "text": "We celebrate individuality, collaboration, and everyone's unique contributions."},
+        {"label": "Learning together.", "text": "We believe in listening, experimenting, and helping one another grow."},
+        {"label": "Making a difference.", "text": "We hope to inspire more girls to explore jazz and create opportunities for future musicians."},
+      ] },
     ],
   },
   ensemble: {
     eyebrow: 'Meet the band', title: 'the girls behind the groove.',
     intro: '[PASTE ENSEMBLE INTRODUCTION HERE]',
-    groupPhoto: { src: '', alt: '', label: 'Everyone in the picture.', caption: 'The ensemble', note: '[ADD A GROUP PHOTO HERE]' },
+    groupPhoto: { src: '', alt: '', label: 'photos coming soon!', caption: 'The ensemble' },
     // Copy a member object to add someone; delete objects to remove cards.
     // Leave bio empty ('') if you prefer no short biography.
     members: [
-      { id: 'member-1', name: '[MEMBER NAME]', instrument: '[INSTRUMENT]', bio: '', photo: { src: '', alt: '', label: '[MEMBER PHOTO]' } },
-      { id: 'member-2', name: '[MEMBER NAME]', instrument: '[INSTRUMENT]', bio: '', photo: { src: '', alt: '', label: '[MEMBER PHOTO]' } },
-      { id: 'member-3', name: '[MEMBER NAME]', instrument: '[INSTRUMENT]', bio: '', photo: { src: '', alt: '', label: '[MEMBER PHOTO]' } },
-      { id: 'member-4', name: '[MEMBER NAME]', instrument: '[INSTRUMENT]', bio: '', photo: { src: '', alt: '', label: '[MEMBER PHOTO]' } },
-      { id: 'member-5', name: '[MEMBER NAME]', instrument: '[INSTRUMENT]', bio: '', photo: { src: '', alt: '', label: '[MEMBER PHOTO]' } },
-      { id: 'member-6', name: '[MEMBER NAME]', instrument: '[INSTRUMENT]', bio: '', photo: { src: '', alt: '', label: '[MEMBER PHOTO]' } },
-      { id: 'member-7', name: '[MEMBER NAME]', instrument: '[INSTRUMENT]', bio: '', photo: { src: '', alt: '', label: '[MEMBER PHOTO]' } },
-      { id: 'member-8', name: '[MEMBER NAME]', instrument: '[INSTRUMENT]', bio: '', photo: { src: '', alt: '', label: '[MEMBER PHOTO]' } },
-      { id: 'member-9', name: '[MEMBER NAME]', instrument: '[INSTRUMENT]', bio: '', photo: { src: '', alt: '', label: '[MEMBER PHOTO]' } },
-      { id: 'member-10', name: '[MEMBER NAME]', instrument: '[INSTRUMENT]', bio: '', photo: { src: '', alt: '', label: '[MEMBER PHOTO]' } },
-      { id: 'member-11', name: '[MEMBER NAME]', instrument: '[INSTRUMENT]', bio: '', photo: { src: '', alt: '', label: '[MEMBER PHOTO]' } },
+      { id: 'member-1', name: "Isabella Salim", instrument: "Tenor Saxophone \u2022 Vocals", role: 'Founder', bio: '', photo: { src: '', alt: '', label: 'photo coming soon!' } },
+      { id: 'member-2', name: "Avery Hay", instrument: "Tenor Saxophone", bio: '', photo: { src: '', alt: '', label: 'photo coming soon!' } },
+      { id: 'member-3', name: "Karen Garcia", instrument: "Baritone Saxophone", bio: '', photo: { src: '', alt: '', label: 'photo coming soon!' } },
+      { id: 'member-4', name: "Meena Swaminathan", instrument: "Trumpet", bio: '', photo: { src: '', alt: '', label: 'photo coming soon!' } },
+      { id: 'member-5', name: "Gianna Ruan", instrument: "Guitar", bio: '', photo: { src: '', alt: '', label: 'photo coming soon!' } },
+      { id: 'member-6', name: "Amita Bhat", instrument: "Guitar \u2022 Vocals", bio: '', photo: { src: '', alt: '', label: 'photo coming soon!' } },
+      { id: 'member-7', name: "Amelia Lai", instrument: "Bass", bio: '', photo: { src: '', alt: '', label: 'photo coming soon!' } },
+      { id: 'member-8', name: "Lani Narin", instrument: "Bass", bio: '', photo: { src: '', alt: '', label: 'photo coming soon!' } },
+      { id: 'member-9', name: "Katheryn Wang", instrument: "Keys", bio: '', photo: { src: '', alt: '', label: 'photo coming soon!' } },
+      { id: 'member-10', name: "Elizabeth Yang", instrument: "Keys \u2022 Vocals", bio: '', photo: { src: '', alt: '', label: 'photo coming soon!' } },
+      { id: 'member-11', name: "Rio Sato", instrument: "Drums", bio: '', photo: { src: '', alt: '', label: 'photo coming soon!' } },
     ],
   },
   performances: {
