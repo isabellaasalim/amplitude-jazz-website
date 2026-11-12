@@ -1,3 +1,11 @@
+/* Locally hosted, OFL-licensed font; used only by the three ticker phrases. */
+@font-face {
+  font-family: 'Amplitude Caveat';
+  src: url('../public/fonts/caveat-variable.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+}
 /* Palette and typography: edit these tokens to change the whole site's mood. */
 :root {
   --pink: #F45B9A;
@@ -35,8 +43,8 @@ main:focus { outline: none; }
 .skip-link:focus { top: 10px; }
 .site-header { border-bottom: 1px solid var(--line); }
 .nav-wrap { width: min(1330px, calc(100% - 64px)); margin: auto; min-height: 90px; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
-.wordmark { display: flex; align-items: center; font: italic 900 44px Georgia, serif; letter-spacing: -5px; transform: rotate(-5deg); }
-.wordmark span { font-size: 28px; color: #A93C6B; margin: 0 8px; }
+.wordmark { display: flex; align-items: center; justify-content: center; width: 86px; min-height: 48px; flex-shrink: 0; }
+.wordmark .artwork { width: 86px; height: 48px; }
 nav { display: flex; align-items: center; gap: 28px; }
 nav a { font-size: 12px; padding: 12px 0; position: relative; }
 nav a[aria-current]::after { content: ''; position: absolute; left: -4px; right: -4px; bottom: 3px; height: 7px; border-bottom: 2px solid var(--pink); border-radius: 50%; transform: rotate(-4deg); }
@@ -54,8 +62,8 @@ nav a:hover { color: #91416C; }
 .hero .button { margin-top: 30px; }
 .hero-world { position: relative; min-width: 0; }
 .hero-world > .artwork { width: 113%; max-width: none; margin-left: -6%; }
-.handwritten { font: 18px/1.5 var(--hand); white-space: pre-line; transform: rotate(-7deg); position: absolute; bottom: 1%; right: 1%; }
-.handwritten span { display: inline-block; font: 38px Georgia, serif; padding-left: 10px; }
+.title-wave { width: 125px; margin: -4px 0 7px 2px; }
+.outreach-wave { width: 135px; margin: -12px 0 0 auto; }
 .hero-bottom { grid-column: 1 / -1; margin-top: 28px; padding: 20px 0; display: flex; justify-content: space-between; border-bottom: 1px dashed #AF9BA7; font: 10px 'Courier New', monospace; letter-spacing: .08em; text-transform: uppercase; gap: 20px; }
 .button { display: inline-flex; align-items: center; justify-content: space-between; gap: 35px; background: var(--pink); color: var(--ink); border: 1.4px solid var(--ink); border-radius: 5px 10px 7px 12px; padding: 15px 21px; font-size: 12px; box-shadow: 3px 4px 0 var(--ink); transition: transform .18s, box-shadow .18s, background .18s; }
 .button > span { font-size: 22px; }
@@ -82,7 +90,7 @@ figcaption { display: flex; justify-content: space-between; gap: 15px; font: 10p
 .tape { position: absolute; z-index: 2; top: -12px; left: 35%; width: 105px; height: 30px; background: #B9D9C3D9; transform: rotate(-9deg); clip-path: polygon(2% 0,100% 6%,96% 100%,0 92%,4% 70%,0 50%,4% 30%); }
 .photo-sticker { position: absolute; bottom: 20px; right: -22px; border: 1px solid var(--ink); background: var(--soft); border-radius: 50%; padding: 23px 15px; max-width: 138px; text-align: center; font: 15px/1.5 var(--hand); transform: rotate(-13deg); }
 .ticker { display: flex; justify-content: center; gap: 55px; padding: 21px 30px; background: var(--sage); border-block: 1px solid var(--ink); transform: rotate(-1deg); }
-.ticker > span { display: flex; align-items: center; gap: 55px; font: 19px var(--hand); white-space: nowrap; }
+.ticker > span { display: flex; align-items: center; gap: 55px; font: 500 24px/1.25 'Amplitude Caveat', var(--hand); letter-spacing: .015em; white-space: nowrap; }
 .ticker .star { width: 25px; color: var(--paper); }
 .performance-preview { padding-block: 80px 85px; }
 .section-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; }
@@ -145,12 +153,12 @@ figcaption { display: flex; justify-content: space-between; gap: 15px; font: 10p
 .contact-card small { display: block; font: 10px 'Courier New', monospace; margin-top: 5px; }
 .email-link { display: block; overflow-wrap: anywhere; margin-top: 20px; text-decoration: underline; }
 .contact-card a:hover { text-decoration: underline; }
-/* The mouthpiece tip (6, 3) is the click point. Native cursors remain fallbacks.
+/* The star center (13, 13) is the click point. Native cursors remain fallbacks.
    Touch, reduced-motion users, and text editing keep their native cursors. */
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  body { cursor: url('../public/art/saxophone-cursor.svg') 6 3, auto; }
+  body { cursor: url('../public/art/star-cursor.svg') 13 13, auto; }
   a, button, [role="button"], summary {
-    cursor: url('../public/art/saxophone-cursor.svg') 6 3, pointer;
+    cursor: url('../public/art/star-cursor.svg') 13 13, pointer;
   }
 }
 input, textarea, [contenteditable]:not([contenteditable="false"]) { cursor: text; }
@@ -173,16 +181,15 @@ input, textarea, [contenteditable]:not([contenteditable="false"]) { cursor: text
   .intro-text { font-size: 19px; }
   .button-row { gap: 20px; }
   .ticker, .ticker > span { gap: 27px; }
-  .ticker > span { font-size: 16px; }
+  .ticker > span { font-size: 22px; }
   .member-grid { grid-template-columns: repeat(2,1fr); gap: 30px; }
   .contact-grid { gap: 35px; }
   .hero-title { font-size: 6.3vw; }
-  .handwritten { font-size: 15px; bottom: -5%; }
 }
 @media (max-width: 760px) {
   .wrap, .nav-wrap { width: calc(100% - 40px); }
   .nav-wrap { min-height: 76px; flex-wrap: wrap; gap: 0; }
-  .wordmark { font-size: 39px; }
+  .wordmark, .wordmark .artwork { width: 77px; }
   .menu-button { display: flex; align-items: center; gap: 20px; border: 1px solid var(--ink); border-radius: 5px 8px; background: var(--paper); padding: 10px 13px; font-size: 12px; }
   nav { display: none; width: 100%; padding: 18px 0 25px; flex-direction: column; align-items: stretch; gap: 4px; }
   nav.open { display: flex; }
@@ -197,8 +204,6 @@ input, textarea, [contenteditable]:not([contenteditable="false"]) { cursor: text
   .hero .button { margin-top: 24px; }
   .hero-world { width: min(100%, 470px); margin: 15px auto 12px; }
   .hero-world > .artwork { width: 100%; margin: 0; }
-  .handwritten { right: 5px; bottom: -6px; font-size: 14px; }
-  .handwritten span { font-size: 28px; }
   .hero-bottom { margin-top: 18px; font-size: 9px; line-height: 1.6; }
   .hero-bottom > span:last-child { text-align: right; }
   .intro-grid { grid-template-columns: 1fr; gap: 50px; padding-block: 40px 65px; }
@@ -208,7 +213,7 @@ input, textarea, [contenteditable]:not([contenteditable="false"]) { cursor: text
   .photo-empty { min-height: 250px; }
   .photo-sticker { right: -16px; }
   .ticker { flex-wrap: wrap; justify-content: center; gap: 14px 25px; padding: 18px 20px; }
-  .ticker > span { font-size: 14px; gap: 20px; }
+  .ticker > span { font-size: 21px; gap: 20px; }
   .ticker .star { width: 18px; }
   .performance-preview { padding-block: 50px; }
   .section-top { flex-direction: column; align-items: flex-start; gap: 15px; }
@@ -244,4 +249,16 @@ input, textarea, [contenteditable]:not([contenteditable="false"]) { cursor: text
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; }
   .hero-world:hover > .artwork, .member:hover .photo { transform: none; }
+}
+
+/* A small, fixed overlay never participates in page layout or input. */
+.cursor-trail { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 100; }
+.cursor-note { position: absolute; pointer-events: none; font: 14px/1 Georgia, serif; color: #D68BAC; opacity: 0; animation: note-drift 720ms ease-out forwards; will-change: transform, opacity; }
+@keyframes note-drift {
+  0% { opacity: 0; transform: translate(0, 0) rotate(-10deg); }
+  15% { opacity: .48; }
+  100% { opacity: 0; transform: translate(-8px, -18px) rotate(8deg); }
+}
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .cursor-trail { display: none; }
 }

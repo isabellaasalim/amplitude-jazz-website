@@ -65,8 +65,15 @@ The original decorative illustrations are separate, editable SVG files in `publi
 
 - `band-garden.svg` — homepage instrument scene
 - `little-melody.svg` — secondary community illustration
-- `saxophone-cursor.svg` — light-pink saxophone desktop cursor
+- `star-cursor.svg` — original small pink star cursor
+- `sound-wave.svg` — two reusable, thin waveform doodles
+- `home-mark.svg` — navigation star and wave mark
 
 Replace either illustration file with your own artwork, or change its path in `content.artwork` in `src/content.js`. SVG, PNG, and WebP work; keep a similar aspect ratio (650×560 for the hero and 420×300 for the secondary illustration). These images are decorative and hidden from screen readers; real ensemble photos keep their editable alt text.
 
-The palette and handwriting font stack are defined at the top of `src/styles.css`. The custom cursor applies to the page, links, and buttons only with a fine pointer, hover support, and no reduced-motion preference. Editable text fields keep native text-selection cursors. To replace it, use a small SVG (28×28) at the same path, or update the cursor declaration in the CSS. Its hotspot is the mouthpiece tip at (6, 3). Hover motion is disabled when visitors prefer reduced motion. No new dependencies are needed for the artwork or interactions.
+The palette and handwriting font stack are defined at the top of `src/styles.css`. The custom cursor applies to the page, links, and buttons only with a fine pointer, hover support, and no reduced-motion preference. Editable text fields keep native text-selection cursors. To replace it, use a small SVG (28×28) at the same path, or update the cursor declaration in the CSS. Its hotspot is the star center at (13, 13). Hover motion is disabled when visitors prefer reduced motion. No new dependencies are needed for the artwork or interactions.
+
+
+The cursor’s music-note trail is managed in `src/cursorTrail.js`, with animation styling in `.cursor-note` in `src/styles.css`. At most six notes are present, emitted at least 115ms apart and removed after 780ms. It uses no React state or continuous animation loop. Touch, reduced motion, dragging, and editing text suppress the effect; scrolling or losing focus clears it. Run `node --test tests/cursorTrail.test.js` to check these safeguards.
+
+Only the ticker uses the locally hosted Caveat variable font in `public/fonts/`. Its SIL Open Font License is included as `Caveat-OFL.txt`. All primary typefaces remain unchanged. Replace waveform and home-mark paths under `content.artwork` to use your own artwork.

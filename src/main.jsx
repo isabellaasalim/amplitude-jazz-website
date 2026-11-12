@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { content as c } from './content';
 import './styles.css';
+import { attachCursorTrail } from './cursorTrail';
 
 const ids = c.navigation.map(item => item.id);
 const currentPage = () => ids.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'home';
@@ -9,6 +10,11 @@ const Arrow = () => <span aria-hidden="true">↗</span>;
 function Link({ to, children, className = '' }) { return <a className={className} href={`#${to}`}>{children}<Arrow /></a>; }
 function Star({ className = '' }) { return <svg className={`star ${className}`} viewBox="0 0 100 100" aria-hidden="true"><path d="m48 7 13 29 31 1-24 23 8 32-29-16-29 15 7-32L5 36l32-1Z" fill="currentColor" stroke="var(--ink)" strokeWidth="3" strokeLinejoin="round" /></svg>; }
 function Artwork({ name, className = '' }) { return <img className={`artwork ${className}`} src={c.artwork[name]} alt="" aria-hidden="true" />; }
+function CursorTrail() {
+  const host = useRef(null);
+  useEffect(() => attachCursorTrail(host.current), []);
+  return <div ref={host} className="cursor-trail" aria-hidden="true" />;
+}
 function Placeholder({ children }) { return <p className="placeholder">{children}</p>; }
 function Photo({ photo, portrait = false }) {
   return <figure className={`photo ${portrait ? 'portrait' : ''}`}>
@@ -23,16 +29,16 @@ function Home() { const h = c.home; return <>
   <section className="hero wrap">
     <div className="hero-copy"><p className="eyebrow">{h.eyebrow}<br/>{c.site.location}</p>
       <h1 className="hero-title"><span>{h.titleTop}</span><span className="jazz">{h.titleBottom}<Star /></span></h1>
-      <p className="tagline">{c.site.tagline}</p>
+      <Artwork name="waveform" className="title-wave"/><p className="tagline">{c.site.tagline}</p>
       <Link to="ensemble" className="button">{h.ensembleButton}</Link>
     </div>
-    <div className="hero-world"><Artwork name="hero"/><p className="handwritten">{h.note}<span aria-hidden="true"> ⤴</span></p></div>
+    <div className="hero-world"><Artwork name="hero"/></div>
     <div className="hero-bottom"><span className="descriptor">{c.site.descriptor}</span><span>{c.site.school}</span></div>
   </section>
   <section className="intro-grid wrap"><div className="intro-copy"><span className="eyebrow descriptor">{c.site.descriptor}</span><p className="intro-text">{h.intro}</p><Placeholder>{h.introPlaceholder}</Placeholder><div className="button-row"><Link to="about" className="button">{h.aboutButton}</Link><Link to="ensemble" className="text-link">{h.ensembleButton}</Link></div></div><div className="photo-collage"><span className="tape" aria-hidden="true"/><Photo photo={h.photo}/><span className="photo-sticker">{c.site.tagline}</span></div></section>
   <div className="ticker">{h.ticker.map(t => <span key={t}>{t}<Star /></span>)}</div>
   <section className="performance-preview wrap"><div className="section-top"><div><p className="eyebrow">{h.performanceLabel}</p><h2>{h.performanceTitle}</h2></div><Link to="performances" className="text-link">{h.performanceButton}</Link></div><Events events={c.performances.upcomingEvents.slice(0, 2)} empty={c.performances.emptyUpcoming}/></section>
-  <section className="outreach"><div className="wrap outreach-grid"><div className="outreach-art"><Artwork name="outreach"/></div><div><p className="eyebrow">{h.initiativeLabel}</p><h2>{h.initiativeTitle}</h2><p>{h.initiativeText}</p><Link to="initiatives" className="button light">{h.initiativeButton}</Link></div></div></section>
+  <section className="outreach"><div className="wrap outreach-grid"><div className="outreach-art"><Artwork name="outreach"/><Artwork name="waveform" className="outreach-wave"/></div><div><p className="eyebrow">{h.initiativeLabel}</p><h2>{h.initiativeTitle}</h2><p>{h.initiativeText}</p><Link to="initiatives" className="button light">{h.initiativeButton}</Link></div></div></section>
   <div className="home-contact wrap"><h2>{c.contact.title}</h2><Link to="contact" className="button">{h.contactButton}</Link></div>
 </>; }
 function InnerPage({ page }) {
@@ -49,6 +55,6 @@ function App() {
   const [page, setPage] = useState(currentPage); const [menu, setMenu] = useState(false); const main = useRef(null);
   useEffect(() => { const navigate = () => { setPage(currentPage()); setMenu(false); window.scrollTo(0, 0); requestAnimationFrame(() => main.current?.focus()); }; window.addEventListener('hashchange', navigate); return () => window.removeEventListener('hashchange', navigate); }, []);
   useEffect(() => { document.title = `${c.navigation.find(n => n.id === page).label} — ${c.site.name}`; }, [page]);
-  return <><a href="#main" className="skip-link" onClick={e => { e.preventDefault(); main.current.focus(); }}>{c.site.skip}</a><header className="site-header"><div className="nav-wrap"><a href="#home" className="wordmark" aria-label={c.site.homeLabel}>a<span aria-hidden="true">✳</span>j</a><button className="menu-button" onClick={() => setMenu(!menu)} aria-expanded={menu} aria-controls="navigation">{menu ? c.site.menuClose : c.site.menuOpen} <span aria-hidden="true">{menu ? '−' : '+'}</span></button><nav id="navigation" aria-label={c.site.navLabel} className={menu ? 'open' : ''}>{c.navigation.map(n => <a key={n.id} href={`#${n.id}`} aria-current={page === n.id ? 'page' : undefined} onClick={() => setMenu(false)}>{n.label}{n.id === 'contact' && <Arrow/>}</a>)}</nav></div></header><main id="main" ref={main} tabIndex="-1">{page === 'home' ? <Home/> : <InnerPage page={page}/>}</main><footer className="site-footer wrap"><a href="#home" className="footer-name">{c.site.name}<Star/></a><p>{c.site.footer}</p><div><span>© {new Date().getFullYear()} {c.site.copyright}</span><span>{c.site.location}</span></div></footer></>;
+  return <><CursorTrail/><a href="#main" className="skip-link" onClick={e => { e.preventDefault(); main.current.focus(); }}>{c.site.skip}</a><header className="site-header"><div className="nav-wrap"><a href="#home" className="wordmark" aria-label={c.site.homeLabel}><Artwork name="homeMark"/></a><button className="menu-button" onClick={() => setMenu(!menu)} aria-expanded={menu} aria-controls="navigation">{menu ? c.site.menuClose : c.site.menuOpen} <span aria-hidden="true">{menu ? '−' : '+'}</span></button><nav id="navigation" aria-label={c.site.navLabel} className={menu ? 'open' : ''}>{c.navigation.map(n => <a key={n.id} href={`#${n.id}`} aria-current={page === n.id ? 'page' : undefined} onClick={() => setMenu(false)}>{n.label}{n.id === 'contact' && <Arrow/>}</a>)}</nav></div></header><main id="main" ref={main} tabIndex="-1">{page === 'home' ? <Home/> : <InnerPage page={page}/>}</main><footer className="site-footer wrap"><a href="#home" className="footer-name">{c.site.name}<Star/></a><p>{c.site.footer}</p><div><span>© {new Date().getFullYear()} {c.site.copyright}</span><span>{c.site.location}</span></div></footer></>;
 }
 createRoot(document.getElementById('root')).render(<App/>);

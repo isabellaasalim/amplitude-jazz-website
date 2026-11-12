@@ -8,6 +8,8 @@ export const content = {
   artwork: {
     hero: 'art/band-garden.svg',
     outreach: 'art/little-melody.svg',
+    waveform: 'art/sound-wave.svg',
+    homeMark: 'art/home-mark.svg',
   },
   site: {
     name: 'Amplitude Jazz', tagline: 'a little jazz goes a long way.',
@@ -26,12 +28,11 @@ export const content = {
   ],
   home: {
     eyebrow: 'An all-girls jazz ensemble', titleTop: 'AMPLITUDE', titleBottom: 'JAZZ',
-    note: 'take a little listen.',
     intro: 'We’re Amplitude Jazz, a student-founded, all-girls jazz ensemble at Wilcox High School. Music brings us together. Making more room for girls in jazz keeps us curious.',
     introPlaceholder: '[PASTE YOUR SHORT INTRODUCTION HERE]',
     aboutButton: 'A little about us', ensembleButton: 'Meet the ensemble', contactButton: 'Get in touch',
     photo: { src: '', alt: '', label: 'the whole gang!', caption: '01 / The band, together', note: '[ADD YOUR ENSEMBLE PHOTO HERE]' },
-    ticker: ['Music first', 'Room for every voice', 'A little improvisation'],
+    ticker: ['music first', 'room for every voice', 'a little improv'],
     performanceTitle: 'catch us somewhere.', performanceLabel: 'On the calendar',
     performanceButton: 'All performances',
     initiativeTitle: 'and then some...', initiativeLabel: 'More than a set list',
