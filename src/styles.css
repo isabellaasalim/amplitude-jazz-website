@@ -145,10 +145,21 @@ figcaption { display: flex; justify-content: space-between; gap: 15px; font: 10p
 .contact-card small { display: block; font: 10px 'Courier New', monospace; margin-top: 5px; }
 .email-link { display: block; overflow-wrap: anywhere; margin-top: 20px; text-decoration: underline; }
 .contact-card a:hover { text-decoration: underline; }
-/* Native SVG cursor: no pointer tracking, no animation loop, no effect on touch. */
+/* The mouthpiece tip (6, 3) is the click point. Native cursors remain fallbacks.
+   Touch, reduced-motion users, and text editing keep their native cursors. */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  body { cursor: url('../public/art/saxophone-cursor.svg') 6 3, auto; }
+  a, button, [role="button"], summary {
+    cursor: url('../public/art/saxophone-cursor.svg') 6 3, pointer;
+  }
+}
+input, textarea, [contenteditable]:not([contenteditable="false"]) { cursor: text; }
+.descriptor { text-transform: none; }
+.founder-note { margin-top: 32px; }
+.founder-note h2 { font-size: 24px; letter-spacing: -.04em; }
+.founder-note p { margin-top: 16px; font-size: 14px; }
+.founder-note a { text-decoration: underline; overflow-wrap: anywhere; }
 @media (hover: hover) and (pointer: fine) {
-  body { cursor: url('../public/art/star-cursor.svg') 13 13, auto; }
-  a, button { cursor: pointer; }
   .hero-world:hover > .artwork { transform: rotate(2deg) translateY(-3px); }
   .hero-world > .artwork { transition: transform .35s ease; }
   .outreach-art:hover { transform: rotate(0deg); }

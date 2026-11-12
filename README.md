@@ -17,8 +17,8 @@ Open **`src/content.js`**. This is the single place to edit page headings, navig
 - **About / initiatives / support:** replace the bracketed text in each section.
 - **Members:** update the objects in `ensemble.members`. Copy a whole member object to add a musician; give each a unique `id`. Remove unwanted objects. An empty `bio: ''` hides the biography.
 - **Events:** `performances.upcomingEvents` and `pastEvents` start empty. Copy the commented event example, replace every placeholder with real information, and use a unique `id`. Move an event to the past list after it happens. Dates are plain display text, so write them the way you want visitors to read them.
-- **Email:** replace `contact.email: ''` with your real official address. Only then will an email link appear.
-- **Socials:** fill in each official `https://` URL. Empty links remain non-clickable placeholders. Add or remove social objects as needed.
+- **Email:** `contact.email` contains the official organization email and powers both Contact page email links.
+- **Socials:** the official Instagram link is configured in `contact.socials`. Update its label or official `https://` URL there.
 - **Home introduction:** replace `home.intro` with your final introduction and set `introPlaceholder` to `''` to remove its editing prompt.
 
 The small `a✳j` brand mark and decorative arrows/stars live in `src/main.jsx`; all normal page copy lives in the content file. The browser description and default document title are in `index.html`.
@@ -57,7 +57,7 @@ For GitHub Pages, enable Pages with **GitHub Actions** in repository Settings, t
 
 ## Before sharing publicly
 
-Replace the clearly marked writing/photo/contact placeholders and check the website on a phone. No real member names, performance dates, venues, contact addresses, nonprofit claims, or tax claims have been invented.
+Replace the clearly marked writing/photo placeholders, verify the configured official contact details, and check the website on a phone. No real member names, performance dates, venues, contact addresses, nonprofit claims, or tax claims have been invented.
 
 ## Replace the illustrated artwork
 
@@ -65,8 +65,8 @@ The original decorative illustrations are separate, editable SVG files in `publi
 
 - `band-garden.svg` — homepage instrument scene
 - `little-melody.svg` — secondary community illustration
-- `star-cursor.svg` — small desktop cursor
+- `saxophone-cursor.svg` — light-pink saxophone desktop cursor
 
 Replace either illustration file with your own artwork, or change its path in `content.artwork` in `src/content.js`. SVG, PNG, and WebP work; keep a similar aspect ratio (650×560 for the hero and 420×300 for the secondary illustration). These images are decorative and hidden from screen readers; real ensemble photos keep their editable alt text.
 
-The palette and handwriting font stack are defined at the top of `src/styles.css`. The custom cursor applies only to a mouse or other fine pointer; links keep the familiar pointer cursor. To replace it, use a small SVG (28×28) at the same path, or update the cursor declaration in the CSS. Hover motion is disabled when visitors prefer reduced motion. No new dependencies are needed for the artwork or interactions.
+The palette and handwriting font stack are defined at the top of `src/styles.css`. The custom cursor applies to the page, links, and buttons only with a fine pointer, hover support, and no reduced-motion preference. Editable text fields keep native text-selection cursors. To replace it, use a small SVG (28×28) at the same path, or update the cursor declaration in the CSS. Its hotspot is the mouthpiece tip at (6, 3). Hover motion is disabled when visitors prefer reduced motion. No new dependencies are needed for the artwork or interactions.

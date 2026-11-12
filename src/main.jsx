@@ -16,7 +16,7 @@ function Photo({ photo, portrait = false }) {
     {photo.caption && <figcaption>{photo.caption}<span aria-hidden="true">↗</span></figcaption>}
   </figure>;
 }
-function PageHeading({ data }) { return <header className="page-heading"><p className="eyebrow">{data.eyebrow}</p><h1>{data.title}<span className="pink">.</span></h1><Star /></header>; }
+function PageHeading({ data }) { return <header className="page-heading"><p className="eyebrow">{data.eyebrow}</p><h1>{data.title}</h1><Star /></header>; }
 function Sections({ sections }) { return <div className="editorial-sections">{sections.map((s, i) => <section className="editorial-row" key={s.title}><span className="number">0{i + 1}</span><h2>{s.title}</h2><Placeholder>{s.text}</Placeholder></section>)}</div>; }
 function Events({ events, empty }) { return events.length ? <div className="events">{events.map(event => <article className="event" key={event.id}><p className="eyebrow">{event.date}</p><h3>{event.title}</h3><p>{event.venue} · {event.location}</p><p>{event.description}</p></article>)}</div> : <div className="empty-event"><span className="empty-mark" aria-hidden="true">↳</span><p>{empty}</p></div>; }
 function Home() { const h = c.home; return <>
@@ -27,13 +27,13 @@ function Home() { const h = c.home; return <>
       <Link to="ensemble" className="button">{h.ensembleButton}</Link>
     </div>
     <div className="hero-world"><Artwork name="hero"/><p className="handwritten">{h.note}<span aria-hidden="true"> ⤴</span></p></div>
-    <div className="hero-bottom"><span>{c.site.descriptor}</span><span>{c.site.school}</span></div>
+    <div className="hero-bottom"><span className="descriptor">{c.site.descriptor}</span><span>{c.site.school}</span></div>
   </section>
-  <section className="intro-grid wrap"><div className="intro-copy"><span className="eyebrow">{c.site.descriptor}</span><p className="intro-text">{h.intro}</p><Placeholder>{h.introPlaceholder}</Placeholder><div className="button-row"><Link to="about" className="button">{h.aboutButton}</Link><Link to="ensemble" className="text-link">{h.ensembleButton}</Link></div></div><div className="photo-collage"><span className="tape" aria-hidden="true"/><Photo photo={h.photo}/><span className="photo-sticker">{c.site.tagline}</span></div></section>
+  <section className="intro-grid wrap"><div className="intro-copy"><span className="eyebrow descriptor">{c.site.descriptor}</span><p className="intro-text">{h.intro}</p><Placeholder>{h.introPlaceholder}</Placeholder><div className="button-row"><Link to="about" className="button">{h.aboutButton}</Link><Link to="ensemble" className="text-link">{h.ensembleButton}</Link></div></div><div className="photo-collage"><span className="tape" aria-hidden="true"/><Photo photo={h.photo}/><span className="photo-sticker">{c.site.tagline}</span></div></section>
   <div className="ticker">{h.ticker.map(t => <span key={t}>{t}<Star /></span>)}</div>
   <section className="performance-preview wrap"><div className="section-top"><div><p className="eyebrow">{h.performanceLabel}</p><h2>{h.performanceTitle}</h2></div><Link to="performances" className="text-link">{h.performanceButton}</Link></div><Events events={c.performances.upcomingEvents.slice(0, 2)} empty={c.performances.emptyUpcoming}/></section>
   <section className="outreach"><div className="wrap outreach-grid"><div className="outreach-art"><Artwork name="outreach"/></div><div><p className="eyebrow">{h.initiativeLabel}</p><h2>{h.initiativeTitle}</h2><p>{h.initiativeText}</p><Link to="initiatives" className="button light">{h.initiativeButton}</Link></div></div></section>
-  <div className="home-contact wrap"><h2>{c.contact.title}<span className="pink">.</span></h2><Link to="contact" className="button">{h.contactButton}</Link></div>
+  <div className="home-contact wrap"><h2>{c.contact.title}</h2><Link to="contact" className="button">{h.contactButton}</Link></div>
 </>; }
 function InnerPage({ page }) {
   const d = c[page];
@@ -42,7 +42,7 @@ function InnerPage({ page }) {
     {page === 'ensemble' && <><Placeholder>{d.intro}</Placeholder><div className="member-grid">{d.members.map(m => <article className="member" key={m.id}><Photo photo={m.photo} portrait/><h2>{m.name}</h2><p className="instrument">{m.instrument}</p>{m.bio && <Placeholder>{m.bio}</Placeholder>}</article>)}</div><Photo photo={d.groupPhoto}/></>}
     {page === 'performances' && <><section className="event-section"><h2>{d.upcoming}</h2><Events events={d.upcomingEvents} empty={d.emptyUpcoming}/></section><section className="event-section"><h2>{d.past}</h2><Events events={d.pastEvents} empty={d.emptyPast}/></section><section className="callout"><div><h2>{d.bookingTitle}</h2><p>{d.bookingText}</p></div><Link to="contact" className="button">{d.bookingButton}</Link></section></>}
     {page === 'support' && <><Sections sections={d.sections}/><Link to="contact" className="button support-button">{d.button}</Link></>}
-    {page === 'contact' && <div className="contact-grid"><div>{d.reasons.map((r, i) => <div className="contact-reason" key={r}><span className="number">0{i + 1}</span><h2>{r}</h2><Arrow /></div>)}</div><section className="contact-card"><Star/><h2>{d.emailLabel}</h2>{d.email ? <a className="email-link" href={`mailto:${d.email}`}>{d.email}</a> : <><Placeholder>{d.emailPlaceholder}</Placeholder><p>{d.emailNote}</p></>}<h3>{d.socialTitle}</h3>{d.socials.map(s => <p key={s.label}>{/^https:\/\//.test(s.url) ? <a href={s.url} target="_blank" rel="noopener noreferrer">{s.label} <Arrow/></a> : <span>{s.label} <small>{s.placeholder}</small></span>}</p>)}</section></div>}
+    {page === 'contact' && <div className="contact-grid"><div>{d.reasons.map((r, i) => <div className="contact-reason" key={r}><span className="number">0{i + 1}</span><h2>{r}</h2><Arrow /></div>)}<section className="founder-note"><h2>{d.founder.heading}</h2><p>{d.founder.text} <a href={`mailto:${d.email}`}>{d.email}</a>.</p></section></div><section className="contact-card"><Star/><h2>{d.emailLabel}</h2><a className="email-link" href={`mailto:${d.email}`}>{d.email}</a><h3>{d.socialTitle}</h3>{d.socials.map(s => <p key={s.label}>{/^https:\/\//.test(s.url) ? <a href={s.url} target="_blank" rel="noopener noreferrer">{s.label} <Arrow/></a> : <span>{s.label} <small>{s.placeholder}</small></span>}</p>)}</section></div>}
   </div>;
 }
 function App() {

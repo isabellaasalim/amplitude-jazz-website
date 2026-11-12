@@ -10,10 +10,10 @@ export const content = {
     outreach: 'art/little-melody.svg',
   },
   site: {
-    name: 'Amplitude Jazz', tagline: 'Amplifying Girls in Jazz',
-    location: 'Santa Clara, California', school: 'Wilcox High School',
-    descriptor: 'Student-founded. All-girls. All jazz.',
-    footer: 'A little rhythm. A little possibility.',
+    name: 'Amplitude Jazz', tagline: 'a little jazz goes a long way.',
+    location: 'Sunnyvale, California', school: 'Wilcox High School',
+    descriptor: 'just a bunch of girls playing jazz.',
+    footer: 'made with love & a little improv.',
     copyright: 'Amplitude Jazz', menuOpen: 'Open menu', menuClose: 'Close menu',
     skip: 'Skip to content', navLabel: 'Main navigation', homeLabel: 'Amplitude Jazz home',
     draftLabel: 'A space for your words', photoLabel: 'Photo to come',
@@ -26,20 +26,20 @@ export const content = {
   ],
   home: {
     eyebrow: 'An all-girls jazz ensemble', titleTop: 'AMPLITUDE', titleBottom: 'JAZZ',
-    note: 'Made of music.\nAnd a little nerve.',
+    note: 'take a little listen.',
     intro: 'We’re Amplitude Jazz, a student-founded, all-girls jazz ensemble at Wilcox High School. Music brings us together. Making more room for girls in jazz keeps us curious.',
     introPlaceholder: '[PASTE YOUR SHORT INTRODUCTION HERE]',
     aboutButton: 'A little about us', ensembleButton: 'Meet the ensemble', contactButton: 'Get in touch',
-    photo: { src: '', alt: '', label: 'The whole ensemble, in one frame.', caption: '01 / The band, together', note: '[ADD YOUR ENSEMBLE PHOTO HERE]' },
+    photo: { src: '', alt: '', label: 'the whole gang!', caption: '01 / The band, together', note: '[ADD YOUR ENSEMBLE PHOTO HERE]' },
     ticker: ['Music first', 'Room for every voice', 'A little improvisation'],
-    performanceTitle: 'See you at the next set.', performanceLabel: 'On the calendar',
+    performanceTitle: 'catch us somewhere.', performanceLabel: 'On the calendar',
     performanceButton: 'All performances',
-    initiativeTitle: 'Beyond the bandstand.', initiativeLabel: 'More than a set list',
+    initiativeTitle: 'and then some...', initiativeLabel: 'More than a set list',
     initiativeText: 'Our interest in jazz reaches beyond playing it. We’re exploring advocacy, music education, and ways to connect with our community.',
     initiativeButton: 'Explore our initiatives',
   },
   about: {
-    eyebrow: 'The story so far', title: 'A little about us',
+    eyebrow: 'The story so far', title: 'how it all started.',
     sections: [
       { title: 'Our story', text: '[PASTE FOUNDING STORY HERE]' },
       { title: 'Our mission', text: '[PASTE MISSION STATEMENT HERE]' },
@@ -49,7 +49,7 @@ export const content = {
     ],
   },
   ensemble: {
-    eyebrow: 'Meet the band', title: 'The people behind the music',
+    eyebrow: 'Meet the band', title: 'the girls behind the groove.',
     intro: '[PASTE ENSEMBLE INTRODUCTION HERE]',
     groupPhoto: { src: '', alt: '', label: 'Everyone in the picture.', caption: 'The ensemble', note: '[ADD A GROUP PHOTO HERE]' },
     // Copy a member object to add someone; delete objects to remove cards.
@@ -57,7 +57,7 @@ export const content = {
     members: Array.from({ length: 4 }, (_, i) => ({ id: `member-${i + 1}`, name: '[MEMBER NAME]', instrument: '[INSTRUMENT]', bio: '[OPTIONAL SHORT BIOGRAPHY]', photo: { src: '', alt: '', label: '[MEMBER PHOTO]' } })),
   },
   performances: {
-    eyebrow: 'Live & in good company', title: 'Come listen', upcoming: 'Upcoming performances', past: 'Past performances',
+    eyebrow: 'Live & in good company', title: 'come hear us play!', upcoming: 'Upcoming performances', past: 'Past performances',
     emptyUpcoming: 'The next set is still taking shape. Check back for upcoming performances.',
     emptyPast: 'Our performance scrapbook will live here. More to come.',
     bookingTitle: 'Have a stage in mind?', bookingText: 'Let’s talk about bringing Amplitude Jazz to your event.', bookingButton: 'Booking inquiries',
@@ -66,7 +66,7 @@ export const content = {
     upcomingEvents: [], pastEvents: [],
   },
   initiatives: {
-    eyebrow: 'Making room, together', title: 'Beyond the Bandstand',
+    eyebrow: 'Making room, together', title: 'more than just music.',
     sections: [
       { title: 'Girls in Jazz Advocacy', text: '[PASTE ADVOCACY DESCRIPTION HERE]' },
       { title: 'Music Education and Workshops', text: '[PASTE EDUCATION AND WORKSHOPS DESCRIPTION HERE]' },
@@ -75,7 +75,7 @@ export const content = {
     ],
   },
   support: {
-    eyebrow: 'Good things happen together', title: 'Help us make some noise',
+    eyebrow: 'Good things happen together', title: 'lend us a hand?',
     sections: [
       { title: 'A little support goes a long way', text: '[PASTE SPONSORSHIP INTRODUCTION HERE]' },
       { title: 'Partnership opportunities', text: '[PASTE PARTNERSHIP OPPORTUNITIES HERE]' },
@@ -84,11 +84,12 @@ export const content = {
     button: 'Sponsorship inquiries',
   },
   contact: {
-    eyebrow: 'Let’s start a conversation', title: 'Get in touch',
+    eyebrow: 'Let’s start a conversation', title: 'drop us a note!',
     reasons: ['Performance booking inquiries', 'Collaboration and outreach inquiries', 'General questions'],
-    emailLabel: 'Write to us', email: '', emailPlaceholder: '[OFFICIAL AMPLITUDE JAZZ EMAIL]',
-    emailNote: 'Our official email will be added here soon.', socialTitle: 'Find us elsewhere',
+    emailLabel: 'Write to us', email: 'amplitudejazz@gmail.com',
+    socialTitle: 'Find us elsewhere',
+    founder: { heading: 'a note for the founder?', text: 'For questions about Amplitude Jazz, collaborations, or anything else, feel free to reach out at' },
     // Add only official https:// profile URLs. Empty URLs render as plain placeholders.
-    socials: [{ label: 'Instagram', url: '', placeholder: '[INSTAGRAM HANDLE]' }, { label: 'Other social', url: '', placeholder: '[SOCIAL LINK]' }],
+    socials: [{ label: '@amplitudejazz', url: 'https://www.instagram.com/amplitudejazz/' }],
   },
 };
