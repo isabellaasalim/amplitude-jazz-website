@@ -23,7 +23,17 @@ function Photo({ photo, portrait = false }) {
   </figure>;
 }
 function PageHeading({ data }) { return <header className="page-heading"><p className="eyebrow">{data.eyebrow}</p><h1>{data.title}</h1><Star /></header>; }
-function Sections({ sections }) { return <div className="editorial-sections">{sections.map((s, i) => <section className="editorial-row" key={s.title}><span className="number">0{i + 1}</span><h2>{s.title}</h2><Placeholder>{s.text}</Placeholder></section>)}</div>; }
+function Sections({ sections }) {
+  return <div className="editorial-sections">{sections.map((s, i) =>
+    <section className="editorial-row" key={s.title}>
+      <span className="number">0{i + 1}</span><h2>{s.title}</h2>
+      <div className="placeholder">{s.values
+        ? s.values.map(value => <p key={value.label}><strong>{value.label}</strong> {value.text}</p>)
+        : s.text.split('\n\n').map((paragraph, index) => <p key={index}>{paragraph}</p>)}
+      </div>
+    </section>
+  )}</div>;
+}
 function Events({ events, empty }) { return events.length ? <div className="events">{events.map(event => <article className="event" key={event.id}><p className="eyebrow">{event.date}</p><h3>{event.title}</h3><p>{event.venue} · {event.location}</p><p>{event.description}</p></article>)}</div> : <div className="empty-event"><span className="empty-mark" aria-hidden="true">↳</span><p>{empty}</p></div>; }
 function Home() { const h = c.home; return <>
   <section className="hero wrap">
@@ -35,7 +45,7 @@ function Home() { const h = c.home; return <>
     <div className="hero-world"><Artwork name="waveform" className="hero-wave"/><Artwork name="hero"/></div>
     <div className="hero-bottom"><span className="descriptor">{c.site.descriptor}</span></div>
   </section>
-  <section className="intro-grid wrap"><div className="intro-copy"><p className="intro-text">{h.intro}</p><Placeholder>{h.introPlaceholder}</Placeholder><div className="button-row"><Link to="about" className="button">{h.aboutButton}</Link><Link to="ensemble" className="text-link">{h.ensembleButton}</Link></div></div><div className="photo-collage"><span className="tape" aria-hidden="true"/><Photo photo={h.photo}/></div></section>
+  <section className="intro-grid wrap"><div className="intro-copy"><p className="intro-text">{h.intro}</p><div className="button-row"><Link to="about" className="button">{h.aboutButton}</Link><Link to="ensemble" className="text-link">{h.ensembleButton}</Link></div></div><div className="photo-collage"><span className="tape" aria-hidden="true"/><Photo photo={h.photo}/></div></section>
   <div className="ticker">{h.ticker.map(t => <span key={t}>{t}<Star /></span>)}</div>
   <section className="performance-preview wrap"><div className="section-top"><div><p className="eyebrow">{h.performanceLabel}</p><h2>{h.performanceTitle}</h2></div><Link to="performances" className="text-link">{h.performanceButton}</Link></div><Events events={c.performances.upcomingEvents.slice(0, 2)} empty={c.performances.emptyUpcoming}/></section>
   <section className="outreach"><div className="wrap outreach-grid"><div className="outreach-art"><Artwork name="outreach"/><Artwork name="waveform" className="outreach-wave"/></div><div><p className="eyebrow">{h.initiativeLabel}</p><h2>{h.initiativeTitle}</h2><p>{h.initiativeText}</p><Link to="initiatives" className="button light">{h.initiativeButton}</Link></div></div></section>
